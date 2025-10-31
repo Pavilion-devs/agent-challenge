@@ -32,6 +32,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env
+.env.local
+.env.*.local
 
 # vercel
 .vercel
@@ -90,3 +92,17 @@ package-lock.json
 yarn.lock
 pnpm-lock.yaml
 bun.lockb
+
+# test files
+test-*.mjs
+test-*.js
+
+# notes and documentation files (not meant for repo)
+*.txt
+!robots.txt
+ro.md
+cursor_*.md
+
+# separate projects not part of main codebase
+tabsy/
+website/

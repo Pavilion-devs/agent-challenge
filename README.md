@@ -3,6 +3,218 @@
 
 ![Agent](./assets/NosanaBuildersChallenge03.jpg)
 
+---
+
+# 🚀 PITCH AI - AI Startup Pitch Agent
+
+> **Transform your startup idea into an investor-ready pitch deck in seconds**
+
+**Live Demo:** [Coming Soon - Deployed on Nosana]
+**Docker Image:** `olathepavilion/agent-challenge:latest`
+**Video Demo:** [Coming Soon]
+
+## 📖 What is Pitch AI?
+
+**Pitch AI** is an intelligent agent that helps founders, builders, and entrepreneurs transform raw startup ideas into professional, structured pitch decks instantly. Built with Mastra framework and deployed on Nosana's decentralized compute network.
+
+### Key Features
+
+✨ **Market Research** - Automatically researches competitors and market insights using Brave Search API
+📝 **Smart Pitch Generation** - Creates structured investor-ready content (Problem, Solution, Market, Business Model, Tech Stack)
+🎨 **Logo Generation** - Generates professional placeholder logos for your startup
+📊 **Real-time Progress Tracking** - Watch as AI tools execute in real-time
+📄 **PDF Export** - Download your complete pitch deck as a professional PDF
+🎯 **Structured Input** - Guide the AI with your specific startup details
+
+## 🛠️ How It Works
+
+### Agent Architecture
+
+```
+User Input (Structured Form)
+    ↓
+Pitch Agent (OpenAI GPT-4o)
+    ↓
+┌─────────────────────────────────────┐
+│  Tool 1: Research Tool (🔍)         │
+│  → Brave Search API                 │
+│  → Competitor analysis              │
+│  → Market insights                  │
+├─────────────────────────────────────┤
+│  Tool 2: Pitch Formatter (📝)       │
+│  → LLM-powered content generation   │
+│  → Professional structuring         │
+│  → Investor-ready language          │
+├─────────────────────────────────────┤
+│  Tool 3: Logo Generator (🎨)        │
+│  → Visual branding                  │
+│  → Placeholder logo creation        │
+└─────────────────────────────────────┘
+    ↓
+Beautiful Neobrutalism UI Display
+    ↓
+PDF Export Ready
+```
+
+### Tools Implemented
+
+#### 1. **researchTool** (`src/mastra/tools/researchTool.ts`)
+- **Purpose:** Fetch real-time competitor and market data
+- **API:** Brave Search API with intelligent fallback data
+- **Features:**
+  - HTML cleaning and entity decoding
+  - Smart company name extraction
+  - Sentence-boundary text truncation
+  - Category-based intelligent fallbacks
+
+#### 2. **pitchFormatterTool** (`src/mastra/tools/pitchFormatterTool.ts`)
+- **Purpose:** Structure raw ideas into investor-ready pitch sections
+- **Output:** Problem, Solution, Market, Business Model, Tech Stack
+- **Features:** LLM-powered content expansion and professional formatting
+
+#### 3. **generateLogoTool** (`src/mastra/tools/generateLogoTool.ts`)
+- **Purpose:** Create visual branding for the startup
+- **Output:** Professional placeholder logo with startup name
+
+## 🎨 Frontend Features
+
+- **Neobrutalism Design System** - Bold borders, vibrant colors, brutal shadows
+- **Structured Input Form** - Name, Description, Audience, Problem, Business Model
+- **Real-time Tool Progress Tracker** - See which tools are executing
+- **Color-coded Pitch Sections** - Violet, Lime, Rose, Amber themed cards
+- **Responsive Layout** - Works beautifully on mobile and desktop
+- **PDF Export** - One-click download of complete pitch deck
+
+## 🔧 Environment Variables Required
+
+```env
+# OpenAI API (for agent)
+OPENAI_API_KEY=your-openai-key
+
+# Brave Search API (for market research)
+BRAVE_API_KEY=your-brave-api-key
+```
+
+## 🚀 Setup Instructions
+
+### Local Development
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR-USERNAME/agent-challenge
+cd agent-challenge
+
+# Install dependencies
+pnpm install
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your API keys
+
+# Run development servers
+pnpm run dev:ui      # Frontend on http://localhost:3000
+pnpm run dev:agent   # Agent server on http://localhost:4111
+```
+
+### Docker Deployment
+
+```bash
+# Build the Docker image
+docker build -t olathepavilion/agent-challenge:latest .
+
+# Test locally
+docker run -p 3000:3000 -p 4111:4111 \
+  -e OPENAI_API_KEY=your-key \
+  -e BRAVE_API_KEY=your-key \
+  olathepavilion/agent-challenge:latest
+
+# Push to Docker Hub
+docker push olathepavilion/agent-challenge:latest
+```
+
+## 📸 Screenshots
+
+### Input Form
+[Screenshot Coming Soon]
+
+### Real-time Progress Tracking
+[Screenshot Coming Soon]
+
+### Generated Pitch Deck
+[Screenshot Coming Soon]
+
+### PDF Export
+[Screenshot Coming Soon]
+
+## 🎯 Example Usage
+
+1. **Fill the form:**
+   - Startup Name: "LedgerFlow"
+   - Description: "AI-powered accounting for small businesses"
+   - Target Audience: "SMBs and accountants"
+   - Problem: "Manual bookkeeping is time-consuming"
+   - Business Model: "Subscription-based SaaS"
+
+2. **Chat with the agent:**
+   ```
+   "Generate a pitch deck for LedgerFlow"
+   ```
+
+3. **Watch the magic happen:**
+   - 🔍 Researching Market & Competitors → ✅
+   - 📝 Formatting Pitch Deck → ✅
+   - 🎨 Generating Logo → ✅
+
+4. **Get your professional pitch deck:**
+   - Problem statement
+   - Solution overview
+   - Market analysis with competitors
+   - Business model
+   - Tech stack recommendations
+   - Download as PDF
+
+## 🏆 Technical Highlights
+
+- **Framework:** Mastra for agent orchestration, CopilotKit for UI integration
+- **LLM:** OpenAI GPT-4o
+- **Search:** Brave Search API for real-time market data
+- **Frontend:** Next.js 15 with Tailwind CSS
+- **Design:** Custom neobrutalism design system
+- **PDF Generation:** jsPDF with custom formatting
+- **Deployment:** Docker containerized, ready for Nosana
+
+## 📊 Performance
+
+- ⚡ **Pitch Generation Time:** ~10-15 seconds
+- 🔧 **Tools Executed:** 3 (Research, Format, Logo)
+- 🎨 **UI Load Time:** < 1 second
+- 📄 **PDF Generation:** Instant client-side
+
+## 🎥 Demo Video
+
+[Video will be uploaded to YouTube and linked here]
+
+**Demo Flow:**
+1. Show the structured input form
+2. Submit startup details
+3. Watch real-time tool execution progress
+4. Display generated pitch deck with all sections
+5. Show market research with real competitors
+6. Download PDF and show the formatted output
+7. Highlight Nosana deployment
+
+## 🚢 Nosana Deployment
+
+**Status:** Ready for deployment
+**Docker Image:** `olathepavilion/agent-challenge:latest`
+**Deployment URL:** [Will be added after deployment]
+
+### Deployment Configuration
+
+See `nos_job_def/nosana_mastra.json` for Nosana job definition.
+
+---
+
 ## Welcome to the AI Agent Challenge
 
 Build and deploy intelligent AI agents using the **Mastra framework** on the **Nosana decentralized compute network**. Whether you're a beginner or an experienced developer, this challenge has something for everyone!

@@ -1,12 +1,16 @@
 import { MCPServer } from "@mastra/mcp"
-import { weatherTool } from "../tools";
-import { weatherAgent } from "../agents";
+import { researchTool, pitchFormatterTool, generateLogoTool } from "../tools";
+import { pitchAgent } from "../agents";
 
 export const server = new MCPServer({
-  name: "My Custom Server",
+  name: "AI Pitch Agent Server",
   version: "1.0.0",
-  tools: { weatherTool },
-  agents: { weatherAgent }, // this agent will become tool "ask_weatherAgent"
+  tools: { 
+    researchTool, 
+    pitchFormatterTool, 
+    generateLogoTool 
+  },
+  agents: { pitchAgent }, // this agent will become tool "ask_pitchAgent"
   // workflows: {
   // dataProcessingWorkflow, // this workflow will become tool "run_dataProcessingWorkflow"
   // }
