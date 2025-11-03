@@ -1,0 +1,71 @@
+node_modules
+.next
+.vercel
+out
+dist
+build
+
+# Env files
+.env
+*.env
+nosana.env
+nosana.env.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Databases / Prisma
+prisma/*.db
+prisma/**/*.db
+prisma/**/data/
+
+# Generated artifacts
+.mastra/
+coverage
+
+# OS / Editor
+.DS_Store
+.idea
+.vscode
+
+# Docker local files
+docker-compose*.yml
+*.local.*
+
+# Unnecessary shell and profile files
+.bashrc
+.bash_logout
+.profile
+
+# Project-local docs and prototypes not needed in repo
+LOCAL_TESTING.md
+prd.txt
+console.txt
+logs.txt
+
+# Remove this folder from tracking
+.specstory/
+
+# Only keep nosana.env.example; ignore other env templates
+.env.example
+.env.template
+
+# Local docs and artifacts not needed in repo
+LOCAL_TESTING.md
+prd.txt
+console.txt
+logs.txt
+
+# Optional deployment scripts (keep local)
+docker-deploy.sh
+docker-entrypoint.sh
+
+# Misc markdown you don't want to track (keep README.md)
+!README.md
+*.md
+!README*.md
